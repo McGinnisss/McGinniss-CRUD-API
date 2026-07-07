@@ -45,7 +45,7 @@ public class CharaService {
         return charaRepository.findByNameContainingIgnoreCaseOrRaceContainingIgnoreCaseOrChClassContainingIgnoreCase(keyword, keyword, keyword);
     }
 
-    public List<Character> getPostsByAuthor(String name) {
+    public List<Character> getCharactersByName(String name) {
         return charaRepository.findByNameContainingIgnoreCase(name);
     }
 

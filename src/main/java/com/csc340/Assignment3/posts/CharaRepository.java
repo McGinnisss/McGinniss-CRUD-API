@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CharaRepository extends JpaRepository<Character, Long>{
-    List<Character> findByTitleContainingIgnoreCaseOrContentContainingIgnoreCase(String titleKeyword, String contentKeyword);
+    List<Character> findByNameContainingIgnoreCaseOrRaceContainingIgnoreCaseOrChClassContainingIgnoreCase(String nameKeyword, String raceKeyword, String chClassKeyword);
 
     List<Character> findByNameContainingIgnoreCase(String name);
 

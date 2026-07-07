@@ -1,5 +1,4 @@
-package com.csc340.crud_api.posts;
-
+package com.csc340.Assignment3.posts;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
