@@ -28,15 +28,15 @@ public class Character {
     private String race;
 
     @Column(nullable = false)
-    private String ChClass;
+    private String chClass;
     
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    public Character(String name, String race, String ChClass, String description) {
+    public Character(String name, String race, String chClass, String description) {
         this.name = name;
         this.race = race;
-        this.ChClass = ChClass;
+        this.chClass = chClass;
         this.description = description;
     }
 

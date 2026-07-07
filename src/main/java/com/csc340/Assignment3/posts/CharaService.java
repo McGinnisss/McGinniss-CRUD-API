@@ -29,6 +29,7 @@ public class CharaService {
             existingCharacter.setName(updatedCharacter.getName());
             existingCharacter.setRace(updatedCharacter.getRace());
             existingCharacter.setChClass(updatedCharacter.getChClass());
+            existingCharacter.setDescription(updatedCharacter.getDescription());
             return charaRepository.save(existingCharacter);
         }
         return null;
