@@ -28,7 +28,7 @@ public class CharaService {
         if (existingCharacter != null) {
             existingCharacter.setName(updatedCharacter.getName());
             existingCharacter.setRace(updatedCharacter.getRace());
-            existingCharacter.setClass(updatedCharacter.getClass());
+            existingCharacter.setChClass(updatedCharacter.getChClass());
             return charaRepository.save(existingCharacter);
         }
         return null;
@@ -42,7 +42,7 @@ public class CharaService {
         return false;
     }
     public List<Character> searchCharacters(String keyword) {
-        return charaRepository.findByNameContainingIgnoreCaseOrRaceContainingIgnoreCaseOrClassContainingIgnoreCase(keyword, keyword, keyword);
+        return charaRepository.findByNameContainingIgnoreCaseOrRaceContainingIgnoreCaseOrChClassContainingIgnoreCase(keyword, keyword, keyword);
     }
 
     public List<Character> getPostsByAuthor(String name) {

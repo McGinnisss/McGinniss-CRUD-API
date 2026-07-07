@@ -23,12 +23,20 @@ public class Character {
 
     @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
+    private String race;
+
+    @Column(nullable = false)
+    private String ChClass;
     
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    public Character(String name, String description) {
+    public Character(String name, String race, String ChClass, String description) {
         this.name = name;
+        this.race = race;
+        this.ChClass = ChClass;
         this.description = description;
     }
 
