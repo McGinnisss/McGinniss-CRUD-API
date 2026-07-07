@@ -1,7 +1,6 @@
 package com.csc340.Assignment3.posts;
 
-import org.springframework.data.annotation.Id;
-
+import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,11 +11,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "posts")
+@Table(name = "characters")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post {
+public class Character {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +27,7 @@ public class Post {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    public Post(String name, String description) {
+    public Character(String name, String description) {
         this.name = name;
         this.description = description;
     }
