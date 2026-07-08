@@ -36,13 +36,10 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">Frieren</h5>
-                    <p class="card-text">Frieren is the main protagonist of the anime series Frieren: Beyond Journey's End.
-                                         She is a powerful elf mage who has lived for centuries and has accumulated vast knowledge of magic.
-                                         She joined the Hero’s party to attempt to defeat the demon king. 
-                                         As an elf Frieren has a different view on time. 
-                                         This is an important factor in her personality.  </p>
-                    <p class="card-text">As the main protagonist, Frieren shows up at the very beginning of the series. </p>
+                    <h5 class="card-title">${character.name}</h5>
+                    <p class="card-text">${character.description}</p>
+                    <p class="card-text">${character.race}</p>
+                    <p class="card-text">${character.chClass}</p>
                 </div>
             </div>
         </div>
