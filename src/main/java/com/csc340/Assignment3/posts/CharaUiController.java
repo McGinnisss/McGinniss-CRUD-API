@@ -129,4 +129,17 @@ public class CharaUiController {
         }
         return "redirect:/characters/" + id + "?error=true";
     }
+
+    @GetMapping("/characters/search")
+    public String searchPosts(@RequestParam("query") String query, Model model) {
+        if (query == null || query.trim().isEmpty()) {
+            model.addAttribute("characterList", charaService.getAllCharacters());
+            model.addAttribute("pageTitle", "All Characters");
+        } else {
+            model.addAttribute("characterList", charaService.searchCharacters(query));
+            model.addAttribute("pageTitle", "Search Results for: " + query);
+        }
+        return "index";
+    }
+
 }

@@ -38,8 +38,9 @@
     <!-- Search Bar -->    
     <div class="card rounded-0 bg-dark mb-4">
         <div class="card-body">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search Characters" aria-label="Search">
+            <form action="/characters/search" method="get" class="d-flex mb-3">
+                <input class="form-control me-2" type="search" name="query" placeholder="Search by name or description"
+                aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>

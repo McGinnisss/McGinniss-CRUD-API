@@ -3,6 +3,7 @@ package com.csc340.Assignment3.posts;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CharaService {
@@ -42,6 +43,7 @@ public class CharaService {
         }
         return false;
     }
+    @Transactional(readOnly = true)
     public List<Character> searchCharacters(String keyword) {
         return charaRepository.findByNameContainingIgnoreCaseOrRaceContainingIgnoreCaseOrChClassContainingIgnoreCase(keyword, keyword, keyword);
     }
