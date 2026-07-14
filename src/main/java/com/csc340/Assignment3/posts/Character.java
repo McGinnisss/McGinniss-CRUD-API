@@ -1,6 +1,10 @@
 package com.csc340.Assignment3.posts;
 
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+
+import java.util.Base64;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,11 +37,22 @@ public class Character {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    public Character(String name, String race, String chClass, String description) {
+    @Lob
+    @Column(name = "image_data")
+    private byte[] imageData;
+
+    public Character(String name, String race, String chClass, String description, byte[] imageData) {
         this.name = name;
         this.race = race;
         this.chClass = chClass;
         this.description = description;
+        this.imageData = imageData;
     }
-
+    
+    public String getBase64Image() {
+        if (this.imageData != null && this.imageData.length > 0) {
+            return Base64.getEncoder().encodeToString(this.imageData);
+        }
+        return null;
+    }
 }

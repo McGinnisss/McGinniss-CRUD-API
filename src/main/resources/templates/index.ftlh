@@ -13,20 +13,20 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="index.html"> Frieren Gallery</a>
+            <a class="navbar-brand fw-bold" href="/"> Frieren Gallery</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="details.html">Details</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="new-character-form.html">Add a Character</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/characters/add/new">Add a Character</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <!-- Main Content -->
     <!-- Introduction Text -->    
@@ -45,70 +45,25 @@
         </div>
     </div>
 
-
     <!-- Character Cards --> 
-   <div class="container-fluid px-4 text-center">
+    <div class="container-fluid px-4 text-center">
         <div class="row justify-content-center align-items-start g-4">
-            <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="Frieren_anime_profile.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Frieren</h5>
-                        <p class="card-text">Elf, Mage, formerly a part of the Hero’s party, is now a part of Frieren’s party.</p>
-                        <a href="details.html" class="btn btn-primary">Learn More</a>
+            <#list characterList as character>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                            <#if character.base64Image??>
+                                <img src="data:image/png;base64,${character.base64Image}" class="card-img-top" alt="${character.name}">
+                            <#else>
+                                <img src="https://via.placeholder.com/400?text=No+Image+Available" class="card-img-top" alt="Placeholder">
+                            </#if>
+                        <div class="card-body">
+                            <h5 class="card-title">${character.name}</h5>
+                            <p class="card-text">${character.description}</p>
+                            <a href="/characters/${character.characterId}" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="Himmel_anime_profile.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Himmel</h5>
-                        <p class="card-text">Human, Hero, the Hero of the Hero’s party.</p>
-                        <a href="details.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="Heiter_anime_profile.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Heiter</h5>
-                        <p class="card-text">Human, Priest, a part of the Hero’s party. </p>
-                        <a href="details.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="Eisen_anime_profile.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Eisen</h5>
-                        <p class="card-text">Dwarf, Warrior, a part of the Hero’s party. </p>
-                        <a href="details.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="Fern_anime_profile.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Fern</h5>
-                        <p class="card-text">Human, Mage, a part of the Hero’s party. </p>
-                        <a href="details.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="Stark_anime_profile.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Stark</h5>
-                        <p class="card-text">Human, Warrior, a part of Frieren’s party.</p>
-                        <a href="details.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
+            </#list>
         </div>
     </div>
 </body>
