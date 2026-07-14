@@ -57,29 +57,6 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
-    <!--    <form class="row g-3">
-        <div class="col-md-6">
-            <label class="form-label">Character Name</label>
-            <input type="text" class="form-control" placeholder="Name" aria-label="Name">
-        </div>
-        <div class="col-md-6">
-            <label class="form-label">Race</label>
-            <input type="text" class="form-control" placeholder="Human, elf, etc." aria-label="Race">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Character Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="mb-3">
-            <label for="imageUrl" class="form-label fw-bold">Character Image URL</label>
-            <input type="url" class="form-control rounded-0" id="imageUrl" placeholder="https://example.com/character-image.png" required>
-            <div class="form-text">Paste a direct link to an image file (PNG, JPG, WebP).</div>
-        </div>
-
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form> -->
     </div>
 </body>
 </html>
